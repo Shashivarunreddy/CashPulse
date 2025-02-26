@@ -1,3 +1,3 @@
-module.export ={
-  JWT_SECRET:"qwertyuiopasdfghjklzxcvbnm"
-}
+module.exports = {
+  JWT_SECRET: "qwertyuioerngergerghergefofqoipasdfghjklzxcvbnm"
+};

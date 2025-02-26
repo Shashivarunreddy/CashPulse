@@ -1,15 +1,11 @@
 const express = require('express');
 const cors = require('cors');
+const app = express();
+const mainRouter = require('./routes/index');
 app.use(cors());
 app.use(express.json());
-const app = express();
 
-
-const mainRouter = require('./routes/index');
-
-
+ // Ensure this file exists
 app.use("/api/v1/", mainRouter);
-
-module.exports = router;
 
 app.listen(3000);
