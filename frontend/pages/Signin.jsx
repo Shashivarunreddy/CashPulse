@@ -1,8 +1,8 @@
-import BottomWarning from "./BottomWarning"
-import Button from "./Button"
-import Heading from "./Heading"
-import InputBox from "./InputBox"
-import SubHeading from "./SubHeading"
+import BottomWarning from "../components/BottomWarning"
+import Button from "../components/Button"
+import Heading from "../components/Heading"
+import InputBox from "../components/InputBox"
+import SubHeading from "../components/SubHeading"
 
 export const Signin = () => {
 
