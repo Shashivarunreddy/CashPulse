@@ -9,7 +9,7 @@ const { JWT_SECRET } = require("../config");
 const  { authMiddleware } = require("../middleware");
 
 const signupBody = zod.object({
-    username: zod.string().email(),
+    userName: zod.string().email(),
 	firstName: zod.string(),
 	lastName: zod.string(),
 	password: zod.string()
@@ -24,7 +24,7 @@ router.post("/signup", async (req, res) => {
     }
 
     const existingUser = await User.findOne({
-        username: req.body.username
+        userName: req.body.userName
     })
 
     if (existingUser) {
@@ -34,7 +34,7 @@ router.post("/signup", async (req, res) => {
     }
 
     const user = await User.create({
-        username: req.body.username,
+        userName: req.body.userName,
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -58,7 +58,7 @@ router.post("/signup", async (req, res) => {
 
 
 const signinBody = zod.object({
-    username: zod.string().email(),
+    userName: zod.string().email(),
 	password: zod.string()
 })
 
@@ -71,7 +71,7 @@ router.post("/signin", async (req, res) => {
     }
 
     const user = await User.findOne({
-        username: req.body.username,
+        userName: req.body.userName,
         password: req.body.password
     });
 
@@ -132,7 +132,7 @@ router.get("/bulk", async (req, res) => {
 
     res.json({
         user: users.map(user => ({
-            username: user.username,
+            userName: user.userName,
             firstName: user.firstName,
             lastName: user.lastName,
             _id: user._id
